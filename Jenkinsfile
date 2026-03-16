@@ -3,11 +3,13 @@ pipeline {
 
     stages {
         stage('Restart Containers') {
-            steps 'Restarting Docker containers...'
-            sh '''
-                docker compose down
-                docker compose up --build -d
-            '''
+            steps {
+                echo 'Restarting Docker containers...'
+                sh '''
+                    docker compose down
+                    docker compose up --build -d
+                '''   
+            }
         }
     }
 }
