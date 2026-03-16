@@ -6,7 +6,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html")
         self.end_headers()
 
-        self.wfile.write(b"<h1>The webpage running using automated by jenkins</h1>")
+        self.wfile.write(b"<h1>The webpage running using automated by jenkins</h1><br><h2>The end...</h2>")
 server = HTTPServer(("0.0.0.0", 8000), MyHandler)
 print("Server running at http://localhost:8000")
 
