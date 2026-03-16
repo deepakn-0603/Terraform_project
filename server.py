@@ -7,7 +7,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
         self.wfile.write(b"<h1>Hello from Python Backend</h1>")
-server = HTTPServer(("localhost", 8000), MyHandler)
+server = HTTPServer(("0.0.0.0", 8000), MyHandler)
 print("Server running at http://localhost:8000")
 
 server.serve_forever()
